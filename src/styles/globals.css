@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-nunito-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #A30015;
+  --color-primary-dark: #800010;
+  --color-dark-bg: #0A0A0A;
+  --color-dark-card: #141414;
+}
+
