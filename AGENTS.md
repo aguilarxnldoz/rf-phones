@@ -47,7 +47,7 @@ Compact guidance for OpenCode in this repo. README is stale (mentions Prisma + N
 
 ## App layout
 
-- `src/app/` — App Router pages: `/` (landing), `/intake`, `/rep/[id]`, `/api/auth/[...all]`.
+- `src/app/` — App Router pages: `/` (landing), `/intake`, `/api/auth/[...all]`.
 - `src/components/` — shared UI (no `ui/` subdir, no shadcn).
 - `src/server/` — `db/`, `better-auth/` (server-only).
 - `src/data/phones.ts` — current product data is a static mock, not from the DB.

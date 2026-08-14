@@ -3,11 +3,7 @@
 import {useState} from "react";
 import {Send, CheckCircle} from "lucide-react";
 
-interface IntakeFormProps {
-	repId: string | null;
-}
-
-export function IntakeForm({repId}: IntakeFormProps) {
+export function IntakeForm() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -29,7 +25,7 @@ export function IntakeForm({repId}: IntakeFormProps) {
 					<CheckCircle className="h-12 w-12" />
 				</div>
 				<h3 className="font-heading mb-2 text-2xl font-bold text-white">Request Received!</h3>
-				<p className="max-w-sm text-gray-400">{repId ? "Your representative has been notified and will process your request shortly." : "We've received your request and will be in touch shortly."}</p>
+				<p className="max-w-sm text-gray-400">We&apos;ve received your request and will be in touch shortly.</p>
 				<button
 					onClick={() => (window.location.href = "/")}
 					className="mt-8 rounded-full border border-white/20 bg-white/5 px-6 py-2 text-sm font-bold text-white transition-colors duration-150 hover:bg-white/10"
@@ -45,14 +41,6 @@ export function IntakeForm({repId}: IntakeFormProps) {
 			onSubmit={handleSubmit}
 			className="relative z-10 flex flex-col gap-5"
 		>
-			{repId && (
-				<input
-					type="hidden"
-					name="repId"
-					value={repId}
-				/>
-			)}
-
 			<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 				<div className="flex flex-col gap-1.5">
 					<label

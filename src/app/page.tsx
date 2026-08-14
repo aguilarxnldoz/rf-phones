@@ -21,7 +21,7 @@ export default function Home() {
 					<span className="from-primary bg-gradient-to-r to-rose-400 bg-clip-text text-transparent">delivered to you.</span>
 				</h1>
 
-				<p className="mb-10 max-w-2xl text-lg text-gray-400">Get the best deals on premium smartphones with flexible financing options. Scan a rep&apos;s QR code to get a personalized service plan tailored just for you.</p>
+				<p className="mb-10 max-w-2xl text-lg text-gray-400">Get the best deals on premium smartphones with flexible financing options and personalized service plans tailored just for you.</p>
 
 				<div className="flex flex-col gap-4 sm:flex-row">
 					<Link
@@ -56,8 +56,8 @@ export default function Home() {
 						<div className="text-primary mb-4 rounded-full border border-white/10 bg-white/5 p-3">
 							<QrCode className="h-6 w-6" />
 						</div>
-						<h3 className="mb-2 font-bold text-white">Rep Personalized</h3>
-						<p className="text-sm text-gray-500">Scan QR codes for exclusive tailored offers.</p>
+						<h3 className="mb-2 font-bold text-white">Personalized Plans</h3>
+						<p className="text-sm text-gray-500">Tailored offers and rate plans matched to your needs.</p>
 					</div>
 				</div>
 			</section>
@@ -87,7 +87,7 @@ export default function Home() {
 			{/* Footer CTA */}
 			<footer className="bg-dark-bg/90 border-t border-white/10 py-12 text-center">
 				<h2 className="mb-4 text-2xl font-bold text-white">Ready to upgrade?</h2>
-				<p className="mb-8 text-gray-400">Ask your RF Phones representative for their QR code to get started.</p>
+				<p className="mb-8 text-gray-400">Start your upgrade with a personalized service plan today.</p>
 				<p className="text-sm text-gray-600">© {new Date().getFullYear()} RF Phones. All rights reserved.</p>
 			</footer>
 		</main>
