@@ -2,14 +2,7 @@ import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { IntakeForm } from "@/components/IntakeForm";
 import { NavigationBar } from "@/components/NavigationBar";
 
-interface IntakePageProps {
-  searchParams: Promise<{ rep?: string }>;
-}
-
-export default async function IntakePage({ searchParams }: IntakePageProps) {
-  const params = await searchParams;
-  const repId = params?.rep ?? null;
-
+export default function IntakePage() {
   return (
     <main className="relative min-h-screen">
       <AnimatedBackground />
@@ -26,11 +19,6 @@ export default async function IntakePage({ searchParams }: IntakePageProps) {
             </h1>
             <p className="text-lg text-gray-400">
               Fill out the form below to initiate your phone upgrade and secure your rate plan.
-              {repId && (
-                <span className="block mt-2 text-sm text-primary">
-                  Working with Rep ID: {repId}
-                </span>
-              )}
             </p>
           </div>
 
@@ -38,7 +26,7 @@ export default async function IntakePage({ searchParams }: IntakePageProps) {
             {/* Subtle glow */}
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-primary/20 rounded-full blur-[80px] pointer-events-none" />
             
-            <IntakeForm repId={repId} />
+            <IntakeForm />
           </div>
         </div>
       </section>

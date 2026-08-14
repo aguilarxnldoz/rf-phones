@@ -139,7 +139,7 @@ export default async function MemberPage({ params }: MemberPageProps) {
                 </p>
 
                 <Link
-                  href={`/intake?rep=${member.id}`}
+                  href="/intake"
                   className="group flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-4 text-base font-bold text-white shadow-[0_0_20px_rgba(163,0,21,0.3)] transition-all duration-300 hover:bg-primary-dark hover:shadow-[0_0_30px_rgba(163,0,21,0.5)] active:scale-[0.98]"
                 >
                   <MessageSquare className="h-5 w-5" />

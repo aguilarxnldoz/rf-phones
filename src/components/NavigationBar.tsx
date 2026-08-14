@@ -1,14 +1,14 @@
 import Link from "next/link";
-import { QrCode, Smartphone } from "lucide-react";
+import {QrCode, Smartphone} from "lucide-react";
 
-import { AuthNavButton } from "@/components/AuthNavButton";
-import { getSession } from "@/server/better-auth/server";
+import {AuthNavButton} from "@/components/AuthNavButton";
+import {getSession} from "@/server/better-auth/server";
 
 interface NavigationBarProps {
-	variant?: "home" | "intake" | "rep";
+	variant?: "home" | "intake";
 }
 
-export async function NavigationBar({ variant = "home" }: NavigationBarProps) {
+export async function NavigationBar({variant = "home"}: NavigationBarProps) {
 	const session = await getSession();
 	const authUser = session?.user
 		? {
@@ -33,12 +33,18 @@ export async function NavigationBar({ variant = "home" }: NavigationBarProps) {
 			</Link>
 
 			{variant === "home" && (
-				<div className="hidden items-center gap-8 text-sm font-medium text-gray-300 md:flex">
+				<div className="absolute top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-8 text-sm font-medium text-gray-300 md:flex">
 					<Link
 						href="#phones"
 						className="hover:text-primary transition-colors"
 					>
 						Phones
+					</Link>
+					<Link
+						href="#internet"
+						className="hover:text-primary transition-colors"
+					>
+						Internet
 					</Link>
 					<Link
 						href="#plans"
@@ -52,29 +58,21 @@ export async function NavigationBar({ variant = "home" }: NavigationBarProps) {
 					>
 						About Us
 					</Link>
+					<Link
+						href="#contact"
+						className="hover:text-primary transistion-colors"
+					>
+						Contact
+					</Link>
 				</div>
 			)}
 
 			<div className="flex items-center gap-3">
-				{variant === "home" && (
-					<Link
-						href="/rep/demo-rep"
-						className="bg-primary hover:bg-primary-dark hidden items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white shadow-[0_0_20px_rgba(163,0,21,0.3)] transition-[transform,background-color] duration-150 hover:scale-105 active:scale-95 sm:flex"
-					>
-						<QrCode className="h-4 w-4" />
-						<span>Rep Portal</span>
-					</Link>
-				)}
-
 				{variant === "intake" && (
 					<div className="hidden items-center gap-2 text-sm font-medium text-gray-300 sm:flex">
 						<QrCode className="text-primary h-4 w-4" />
 						<span>Secure Intake</span>
 					</div>
-				)}
-
-				{variant === "rep" && (
-					<div className="hidden text-sm font-medium text-gray-300 sm:block">Rep Portal</div>
 				)}
 
 				<AuthNavButton user={authUser} />
