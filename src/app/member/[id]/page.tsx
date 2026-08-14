@@ -13,17 +13,13 @@ import {
 
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { NavigationBar } from "@/components/NavigationBar";
+import { roleLabels } from "@/lib/roles";
 import { db } from "@/server/db";
 import { user } from "@/server/db/schema";
 
 interface MemberPageProps {
   params: Promise<{ id: string }>;
 }
-
-const roleLabels: Record<string, string> = {
-  employee: "Sales Representative",
-  manager: "Sales Manager",
-};
 
 export default async function MemberPage({ params }: MemberPageProps) {
   const { id } = await params;
@@ -139,7 +135,7 @@ export default async function MemberPage({ params }: MemberPageProps) {
                 </p>
 
                 <Link
-                  href="/intake"
+                  href={`/intake/${member.id}`}
                   className="group flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-4 text-base font-bold text-white shadow-[0_0_20px_rgba(163,0,21,0.3)] transition-all duration-300 hover:bg-primary-dark hover:shadow-[0_0_30px_rgba(163,0,21,0.5)] active:scale-[0.98]"
                 >
                   <MessageSquare className="h-5 w-5" />
