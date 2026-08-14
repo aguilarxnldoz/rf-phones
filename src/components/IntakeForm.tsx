@@ -3,7 +3,11 @@
 import {useState} from "react";
 import {Send, CheckCircle} from "lucide-react";
 
-export function IntakeForm() {
+interface IntakeFormProps {
+	repId: string;
+}
+
+export function IntakeForm({repId}: IntakeFormProps) {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -41,6 +45,12 @@ export function IntakeForm() {
 			onSubmit={handleSubmit}
 			className="relative z-10 flex flex-col gap-5"
 		>
+			<input
+				type="hidden"
+				name="repId"
+				value={repId}
+			/>
+
 			<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 				<div className="flex flex-col gap-1.5">
 					<label
